@@ -6,6 +6,7 @@ public class Hole : MonoBehaviour
 {
     public bool isIn = false;
     public int type = 3; // czy dolek jest na 3 uderzenia lub wiecej
+    public AudioClip winSound;
 
     public Dictionary<string, int> PointsList = new Dictionary<string, int>();
     
