@@ -5,21 +5,20 @@ using UnityEngine.UI;
 
 public class Club : MonoBehaviour
 {
-    float power = 0.0f;
-    float speed = 0.0f;
     string[] namesArray = {"Putter", "Drive"};
-    string name = "";
+    public string clubName = "";
 
     public Text nameText;
 
     void Start()
     {
-        name = namesArray[0];
-        nameText.text = name;
+        clubName = namesArray[0];
+        nameText.text = clubName;
     }
 
     private void Update()
     {
+        /*
         if (Input.GetKey(KeyCode.Q))
         {
             this.transform.Rotate(Vector3.up, -10);
@@ -28,6 +27,21 @@ public class Club : MonoBehaviour
         if (Input.GetKey(KeyCode.E))
         {
             this.transform.Rotate(Vector3.up, 2);
+        }
+        */
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            if(clubName == namesArray[0])
+            {
+                clubName = namesArray[1];
+                nameText.text = clubName;
+            }
+            else
+            {
+                clubName = namesArray[0];
+                nameText.text = clubName;
+            }
+            
         }
     }
 }
