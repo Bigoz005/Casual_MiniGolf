@@ -37,6 +37,8 @@ public class Golfer : MonoBehaviour
             if (!finished) { 
                 player.GetComponent<Player>().totalPoints += points;
                 player.GetComponent<Player>().clearedLevels++;
+                hole.GetComponent<AudioSource>().clip = hole.winSound;
+                hole.GetComponent<AudioSource>().Play();
             }
             finished = true;
             SceneManager.LoadScene("Levels");
