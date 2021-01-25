@@ -71,8 +71,10 @@ public class ControlPoint : MonoBehaviour
             xRot += Input.GetAxis("Mouse X") * rotationSpeed;
             yRot += Input.GetAxis("Mouse Y") * rotationSpeed;
 
+
             BallControl();
         }
+
 
         if (Input.GetMouseButtonUp(0))
         {
@@ -87,11 +89,98 @@ public class ControlPoint : MonoBehaviour
                 ball.GetComponentInParent<Ball>().source.clip = ball.GetComponentInParent<Ball>().normalHit;
                 ball.GetComponentInParent<Ball>().source.pitch = 1;
                 ball.GetComponentInParent<Ball>().source.Play();
+
             }
             ball.velocity = transform.forward * shootPower;
             line.gameObject.SetActive(false);
             golfer.strikes++;
             golfer.player.GetComponent<Player>().totalShots++;
+        }
+
+    }
+
+    public void BallControl()
+    {
+        if (club.clubName == "Drive")
+        {
+            if (yRot < -35f)
+            {
+                yRot = -35f;
+            }
+
+            if (yRot > 10f)
+            {
+                yRot = 10f;
+            }
+
+            tempPower = yRot;
+
+            if (tempPower < 0)
+            {
+                shootPower = -tempPower * 0.7f;
+            }
+            else
+            {
+                shootPower = tempPower * 0.2f;
+            }
+
+            if (shootPower > -3 && shootPower < 3)
+            {
+                shootPower = 3f;
+            }
+        }
+        else
+        {
+            if (yRot < -20f)
+            {
+                yRot = -20f;
+            }
+
+            if (yRot > 10f)
+            {
+                yRot = 10f;
+            }
+
+            tempPower = yRot;
+
+            if (tempPower < 0)
+            {
+                shootPower = -tempPower * 0.8f;
+                if (shootPower > 8)
+                {
+                    shootPower = 8;
+                }
+            }
+            else
+            {
+                shootPower = tempPower * 0.3f;
+                if (shootPower > 8)
+                {
+                    shootPower = 8;
+                }
+            }
+
+            if (shootPower > -2 && shootPower < 2)
+            {
+                shootPower = 2f;
+            }
+        }
+        transform.rotation = Quaternion.Euler(yRot, xRot, 0f);
+        line.gameObject.SetActive(true);
+        line.SetPosition(0, transform.position + transform.forward * 0.15f);
+        line.SetPosition(1, transform.position + transform.forward * 4f);
+
+        if (shootPower < 8)
+        {
+            line.startColor = new Color(0, shootPower, 0);
+        }
+        else if (shootPower < 15)
+        {
+            line.startColor = new Color(shootPower, shootPower, 0);
+        }
+        else
+        {
+            line.startColor = new Color(shootPower, 0, 0);
         }
     }
 
