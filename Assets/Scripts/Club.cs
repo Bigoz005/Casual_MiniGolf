@@ -8,12 +8,9 @@ public class Club : MonoBehaviour
     string[] namesArray = { "Putter", "Drive" };
     public string clubName = "";
 
-    public Text nameText;
-
     void Start()
     {
         clubName = namesArray[0];
-        nameText.text = clubName;
     }
 
     private void Update()
@@ -55,12 +52,10 @@ public class Club : MonoBehaviour
         if (clubName == namesArray[0])
         {
             clubName = namesArray[1];
-            nameText.text = clubName;
         }
         else
         {
             clubName = namesArray[0];
-            nameText.text = clubName;
         }
         GetComponentInParent<AudioSource>().Play();
     }

@@ -109,6 +109,7 @@ MonoBehaviour:
   collisionHit: {fileID: 8300000, guid: 2530ba0b678f61e4f9e9c24cc03bf665, type: 3}
   normalHit: {fileID: 8300000, guid: 2530ba0b678f61e4f9e9c24cc03bf665, type: 3}
   hardHit: {fileID: 8300000, guid: 0a05e4ee16423de41a41913b68d106c7, type: 3}
+  source: {fileID: 0}
 --- !u!54 &200854082482772431
 Rigidbody:
   m_ObjectHideFlags: 0

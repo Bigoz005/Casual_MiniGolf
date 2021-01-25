@@ -71,8 +71,10 @@ public class ControlPoint : MonoBehaviour
             xRot += Input.GetAxis("Mouse X") * rotationSpeed;
             yRot += Input.GetAxis("Mouse Y") * rotationSpeed;
 
+
             BallControl();
         }
+
 
         if (Input.GetMouseButtonUp(0))
         {
@@ -87,12 +89,14 @@ public class ControlPoint : MonoBehaviour
                 ball.GetComponentInParent<Ball>().source.clip = ball.GetComponentInParent<Ball>().normalHit;
                 ball.GetComponentInParent<Ball>().source.pitch = 1;
                 ball.GetComponentInParent<Ball>().source.Play();
+
             }
             ball.velocity = transform.forward * shootPower;
             line.gameObject.SetActive(false);
             golfer.strikes++;
             golfer.player.GetComponent<Player>().totalShots++;
         }
+
     }
 
     public void BallControl()

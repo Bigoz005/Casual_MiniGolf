@@ -19,7 +19,7 @@ public class LangChange : MonoBehaviour
         listPL = GameObject.FindGameObjectsWithTag("PL");
         listEN = GameObject.FindGameObjectsWithTag("EN");
 
-        
+
 
         foreach (GameObject PL in listPL)
         {
@@ -34,7 +34,7 @@ public class LangChange : MonoBehaviour
             }
         }
     }
-    
+
     public void HandleInputData(int val)
     {
         if (val == 0)
@@ -45,7 +45,7 @@ public class LangChange : MonoBehaviour
                 listEN[i].SetActive(true);
             }
         }
-        if(val == 1)
+        if (val == 1)
         {
             for (int i = 0; i < listPL.Length; ++i)
             {
