@@ -16,7 +16,6 @@ public class on_off_sounds : MonoBehaviour
 
         Debug.Log("Sound: " + player.IsSoundOn);
         
-
         if (player.IsSoundOn)
         {
             on.SetActive(true);
