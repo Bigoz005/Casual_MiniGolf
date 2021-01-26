@@ -55,7 +55,7 @@ public class Club : MonoBehaviour
         if (clubName == namesArray[0])
         {
             clubName = namesArray[1];
-            
+
             driver.SetActive(true);
             putter.SetActive(false);
         }

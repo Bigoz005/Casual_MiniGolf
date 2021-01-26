@@ -8,23 +8,22 @@ public class Ball : MonoBehaviour
     public AudioClip collisionHit;
     public AudioClip normalHit;
     public AudioClip hardHit;
+    public AudioSource source;
 
     private int numOfCollisions;
 
-    void Start()
+    public void Start()
     {
-    }
-
-    private void Update()
-    {
+        source = GameObject.FindGameObjectWithTag("Ball_Sound_Source").GetComponent<AudioSource>();
     }
 
     void OnCollisionEnter()
     {
-        GetComponent<AudioSource>().clip = collisionHit;
-        if (numOfCollisions >= 1) {
-            GetComponent<AudioSource>().pitch = 2;
-            GetComponent<AudioSource>().Play();
+        source.clip = collisionHit;
+        if (numOfCollisions >= 1)
+        {
+            source.pitch = 2;
+            source.Play();
         }
         numOfCollisions++;
     }

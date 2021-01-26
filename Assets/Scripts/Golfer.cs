@@ -17,13 +17,59 @@ public class Golfer : MonoBehaviour
     public Text pointsText;
     public bool finished = false;
 
+    public AudioSource[] audioSources;
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         strikes = 0;
         points = 0;
         updateTextFields();
+        audioSources = GameObject.FindObjectsOfType<AudioSource>();
         player.GetComponent<Player>().timesPlay++;
+        checkAudioSettings();
+    }
+
+    private void checkAudioSettings()
+    {
+        foreach (AudioSource sound in audioSources)
+        {
+            if (sound.tag == "Sound_Source")
+            {
+                if (player.GetComponent<Player>().IsSoundOn)
+                {
+                    sound.volume = 1.0f;
+                }
+                else
+                {
+                    sound.volume = 0.0f;
+                }
+            }
+
+            if (sound.tag == "Ball_Sound_Source")
+            {
+                if (player.GetComponent<Player>().IsSoundOn)
+                {
+                    sound.volume = 1.0f;
+                }
+                else
+                {
+                    sound.volume = 0.0f;
+                }
+            }
+
+            if (sound.tag == "Music_Source")
+            {
+                if (player.GetComponent<Player>().IsMusicOn)
+                {
+                    sound.volume = 1.0f;
+                }
+                else
+                {
+                    sound.volume = 0.0f;
+                }
+            }
+        }
     }
 
     private void Update()
@@ -34,13 +80,15 @@ public class Golfer : MonoBehaviour
         {
             //wyswietl wynik dolka i przenies do sceny wyboru poziomu
             Time.timeScale = 0;
-            if (!finished) { 
+            if (!finished)
+            {
                 player.GetComponent<Player>().totalPoints += points;
                 player.GetComponent<Player>().clearedLevels++;
                 hole.GetComponent<AudioSource>().clip = hole.winSound;
                 hole.GetComponent<AudioSource>().Play();
             }
             finished = true;
+            SceneManager.LoadScene("Levels");
         }
         else
         {
