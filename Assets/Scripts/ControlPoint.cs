@@ -42,15 +42,19 @@ public class ControlPoint : MonoBehaviour
         {
             if (shootPower > 24)
             {
-                ball.GetComponent<AudioSource>().clip = ball.GetComponentInParent<Ball>().hardHit;
-                ball.GetComponent<AudioSource>().pitch = 4.5f;
-                ball.GetComponent<AudioSource>().Play();
+                ball.GetComponentInParent<Ball>().source.clip = ball.GetComponentInParent<Ball>().hardHit;
+                ball.GetComponentInParent<Ball>().source.pitch = 4.5f;
+                ball.GetComponentInParent<Ball>().source.Play();
             }
             else
             {
-                ball.GetComponent<AudioSource>().clip = ball.GetComponentInParent<Ball>().normalHit;
-                ball.GetComponent<AudioSource>().pitch = 1;
-                ball.GetComponent<AudioSource>().Play();
+                ball.GetComponentInParent<Ball>().source.clip = ball.GetComponentInParent<Ball>().normalHit;
+                ball.GetComponentInParent<Ball>().source.pitch = 1;
+                ball.GetComponentInParent<Ball>().source.Play();
+            }
+            if (golfer.player.GetComponent<Player>().IsVibrationOn)
+            {
+                Handheld.Vibrate();
             }
             ball.velocity = transform.forward * shootPower;
             line.gameObject.SetActive(false);
@@ -67,28 +71,32 @@ public class ControlPoint : MonoBehaviour
             xRot += Input.GetAxis("Mouse X") * rotationSpeed;
             yRot += Input.GetAxis("Mouse Y") * rotationSpeed;
 
+
             BallControl();
         }
+
 
         if (Input.GetMouseButtonUp(0))
         {
             if (shootPower > 24)
             {
-                ball.GetComponent<AudioSource>().clip = ball.GetComponentInParent<Ball>().hardHit;
-                ball.GetComponent<AudioSource>().pitch = 4.5f;
-                ball.GetComponent<AudioSource>().Play();
+                ball.GetComponentInParent<Ball>().source.clip = ball.GetComponentInParent<Ball>().hardHit;
+                ball.GetComponentInParent<Ball>().source.pitch = 4.5f;
+                ball.GetComponentInParent<Ball>().source.Play();
             }
             else
             {
-                ball.GetComponent<AudioSource>().clip = ball.GetComponentInParent<Ball>().normalHit;
-                ball.GetComponent<AudioSource>().pitch = 1;
-                ball.GetComponent<AudioSource>().Play();
+                ball.GetComponentInParent<Ball>().source.clip = ball.GetComponentInParent<Ball>().normalHit;
+                ball.GetComponentInParent<Ball>().source.pitch = 1;
+                ball.GetComponentInParent<Ball>().source.Play();
+
             }
             ball.velocity = transform.forward * shootPower;
             line.gameObject.SetActive(false);
             golfer.strikes++;
             golfer.player.GetComponent<Player>().totalShots++;
         }
+
     }
 
     public void BallControl()

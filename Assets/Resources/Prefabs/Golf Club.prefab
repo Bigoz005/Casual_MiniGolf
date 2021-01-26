@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45ffed9452c2d7941b06b1a400b695f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clubName: Putter
+  clubName: Drive
   nameText: {fileID: 0}
 --- !u!82 &5398961864846269898
 AudioSource:
