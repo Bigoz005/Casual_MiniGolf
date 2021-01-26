@@ -8,7 +8,7 @@ public class Golfer : MonoBehaviour
 {
     Club club;
     Ball ball;
-    public GameObject player;
+    public Player player;
     public Hole hole;
     public GameObject ballController;
     public GameObject mainCanvas;
@@ -27,12 +27,12 @@ public class Golfer : MonoBehaviour
     {
         this.gameObject.AddComponent<AdsManager>();
         adsManager = this.gameObject.GetComponent<AdsManager>();
-        player = GameObject.FindGameObjectWithTag("Player");
-        strikes = 0;
-        points = 0;
+        player = GameObject.FindObjectOfType<Player>();
+        strikes = player.totalShots;
+        points = player.totalPoints;
         updateTextFields();
         audioSources = GameObject.FindObjectsOfType<AudioSource>();
-        player.GetComponent<Player>().timesPlay++;
+        player.timesPlay++;
         checkAudioSettings();
     }
 
@@ -42,7 +42,7 @@ public class Golfer : MonoBehaviour
         {
             if (sound.tag == "Sound_Source")
             {
-                if (player.GetComponent<Player>().IsSoundOn)
+                if (player.IsSoundOn)
                 {
                     sound.volume = 1.0f;
                 }
@@ -54,7 +54,7 @@ public class Golfer : MonoBehaviour
 
             if (sound.tag == "Ball_Sound_Source")
             {
-                if (player.GetComponent<Player>().IsSoundOn)
+                if (player.IsSoundOn)
                 {
                     sound.volume = 1.0f;
                 }
@@ -66,7 +66,7 @@ public class Golfer : MonoBehaviour
 
             if (sound.tag == "Music_Source")
             {
-                if (player.GetComponent<Player>().IsMusicOn)
+                if (player.IsMusicOn)
                 {
                     sound.volume = 1.0f;
                 }
@@ -89,8 +89,8 @@ public class Golfer : MonoBehaviour
             //wyswietl wynik dolka i przenies do sceny wyboru poziomu
             if (!finished)
             {
-                player.GetComponent<Player>().totalPoints += points;
-                player.GetComponent<Player>().clearedLevels++;
+                player.totalPoints += points;
+                player.clearedLevels++;
                 hole.GetComponent<AudioSource>().clip = hole.winSound;
                 hole.GetComponent<AudioSource>().loop = false;
                 hole.GetComponent<AudioSource>().Play();
