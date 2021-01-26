@@ -11,6 +11,7 @@ public class Golfer : MonoBehaviour
     public GameObject player;
     public Hole hole;
     public GameObject ballController;
+    public GameObject mainCanvas;
 
     public int strikes;
     int points;
@@ -84,6 +85,7 @@ public class Golfer : MonoBehaviour
         if (hole.isIn)
         {
             ballController.SetActive(false);
+            mainCanvas.SetActive(false);
             //wyswietl wynik dolka i przenies do sceny wyboru poziomu
             if (!finished)
             {
@@ -99,11 +101,17 @@ public class Golfer : MonoBehaviour
                 adsManager.ShowIntestitialAd();
                 addShowed = true;
             }
+
+            if (adsManager.interstitialClosed)
+            {
+                SceneManager.LoadScene("Menu");
+            }
         }
         else
         {
             //punktacja w zaleznosci od typu dolka
             ballController.SetActive(true);
+            mainCanvas.SetActive(true);
             switch (hole.type)
             {
                 case 3:
