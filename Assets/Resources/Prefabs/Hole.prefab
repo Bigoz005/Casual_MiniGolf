@@ -29,13 +29,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5178736932887208420}
-  m_LocalRotation: {x: -0.6854616, y: 0.5910802, z: -0.26002148, w: 0.3363861}
+  m_LocalRotation: {x: -0.68545985, y: 0.5910814, z: -0.2600184, w: 0.33638987}
   m_LocalPosition: {x: -1.0283679, y: 2.8753784, z: 0.12740062}
   m_LocalScale: {x: 0.22488943, y: 0.22488943, z: 0.2248894}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -3.6920002, y: 129.776, z: -90.00001}
+  m_LocalEulerAnglesHint: {x: -8.846001, y: 130.252, z: -94.34901}
 --- !u!33 &8124928667129303452
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -221,3 +221,5 @@ MonoBehaviour:
   isIn: 0
   type: 3
   winSound: {fileID: 8300000, guid: 2cfb979693e32654c95ac1b84ba3366e, type: 3}
+  level_complete: {fileID: 0}
+  GUI: {fileID: 0}
