@@ -7,27 +7,41 @@ public class on_off_vibration : MonoBehaviour
     public GameObject on;
     public GameObject off;
     public GameObject[] vibrations;
+    private Player player;
 
-    public void toggleOnOff()
+    public void Start()
     {
-        if (!on.activeSelf)
+        player = GameObject.FindObjectOfType<Player>();
+
+        Debug.Log("Vibration: " + player.IsVibrationOn);
+
+        if (player.IsVibrationOn)
         {
             on.SetActive(true);
             off.SetActive(false);
-            foreach(GameObject vibration in vibrations)
-            {
-                //vibration.VibrationToogle(true);
-            }
-            
         }
         else
         {
             off.SetActive(true);
             on.SetActive(false);
-            foreach (GameObject vibration in vibrations)
-            {
-                //vibration.VibrationToogle(true);
-            }
+        }
+
+    }
+
+    public void toggleOnOff()
+    {
+        player = GameObject.FindObjectOfType<Player>();
+        if (!on.activeSelf)
+        {
+            on.SetActive(true);
+            off.SetActive(false);
+            player.IsVibrationOn = true;
+        }
+        else
+        {
+            off.SetActive(true);
+            on.SetActive(false);
+            player.IsVibrationOn = false;
         }
     }
 }

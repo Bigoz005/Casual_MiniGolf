@@ -5,6 +5,7 @@ using UnityEngine;
 public class pauseMenuInteraction : MonoBehaviour
 {
     public GameObject pauseMenu;
+    public GameObject ballController;
 
     public void Start()
     {
@@ -18,22 +19,25 @@ public class pauseMenuInteraction : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Escape) && pauseMenu.activeSelf == false)
             {
-                    pauseMenu.SetActive(true);
-                    Time.timeScale = 0f;
+                ballController.SetActive(false);
+                pauseMenu.SetActive(true);
+                Time.timeScale = 0f;
             }
         }
         else if (Application.platform == RuntimePlatform.Android)
         {
             if (Input.GetKeyDown(KeyCode.Escape) && pauseMenu.activeSelf == false)
             {
-                    pauseMenu.SetActive(true);
-                    Time.timeScale = 0f;
+                ballController.SetActive(false);
+                pauseMenu.SetActive(true);
+                Time.timeScale = 0f;
             }
         }
     }
 
     public void continueGame()
     {
+        ballController.SetActive(true);
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
     }

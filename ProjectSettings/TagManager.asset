@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ball
+  - EN
+  - PL
+  - Ball_Sound_Source
+  - Sound_Source
+  - Music_Source
   layers:
   - Default
   - TransparentFX
