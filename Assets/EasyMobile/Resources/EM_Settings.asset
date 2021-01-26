@@ -51,7 +51,7 @@ MonoBehaviour:
         keys: []
         values: []
     mAdMob:
-      mEnable: 0
+      mEnable: 1
       mTargetingSettings:
         mTagForChildDirectedTreatment: 0
         mExtraOptions:
@@ -63,10 +63,10 @@ MonoBehaviour:
         mAndroidId: 
       mDefaultBannerAdId:
         mIosId: 
-        mAndroidId: 
+        mAndroidId: ca-app-pub-9549284515434904/3393268143
       mDefaultInterstitialAdId:
         mIosId: 
-        mAndroidId: 
+        mAndroidId: ca-app-pub-9549284515434904/6960321528
       mDefaultRewardedAdId:
         mIosId: 
         mAndroidId: 
@@ -313,11 +313,38 @@ MonoBehaviour:
       mValue: '[Your usage description]'
     - mKey: NSPhotoLibraryAddUsageDescription
       mValue: '[Your usage description]'
+  mNativeApisSettings:
+    mIsMediaEnabled: 0
+    mMediaSettings:
+      mAndroidPermissions:
+      - mElementName: uses-permission
+        mValue: android.permission.WRITE_EXTERNAL_STORAGE
+      - mElementName: uses-feature
+        mValue: android.hardware.camera
+      mIOSInfoPlistKeys:
+      - mKey: NSPhotoLibraryUsageDescription
+        mValue: '[Your usage description]'
+      - mKey: NSPhotoLibraryAddUsageDescription
+        mValue: '[Your usage description]'
+      - mKey: NSCameraUsageDescription
+        mValue: '[Your usage description]'
+      - mKey: NSMicrophoneUsageDescription
+        mValue: '[Your usage description]'
+    mIsContactsEnabled: 0
+    mContactsSettings:
+      mAndroidPermissions:
+      - mElementName: uses-permission
+        mValue: android.permission.WRITE_CONTACTS
+      - mElementName: uses-permission
+        mValue: android.permission.READ_CONTACTS
+      mIOSInfoPlistKeys:
+      - mKey: NSContactsUsageDescription
+        mValue: '[Your usage description]'
   mRuntimeAutoInitialization: 1
-  mIsAdModuleEnable: 0
+  mIsAdModuleEnable: 1
   mIsIAPModuleEnable: 0
   mIsGameServiceModuleEnable: 0
   mIsNotificationModuleEnable: 0
   mIsSharingModuleEnable: 0
   mActiveModuleIndex: 0
-  mIsSelectingModule: 1
+  mIsSelectingModule: 0
