@@ -21,9 +21,9 @@ MonoBehaviour:
       interstitialAdNetwork: 0
       rewardedAdNetwork: 0
     mAndroidDefaultAdNetworks:
-      bannerAdNetwork: 0
-      interstitialAdNetwork: 0
-      rewardedAdNetwork: 0
+      bannerAdNetwork: 2
+      interstitialAdNetwork: 2
+      rewardedAdNetwork: 10
     mAdColony:
       mEnable: 0
       mAppId:
@@ -201,7 +201,7 @@ MonoBehaviour:
         keys: []
         values: []
     mUnityAds:
-      mEnable: 0
+      mEnable: 1
       mAppId:
         mIosId: 
         mAndroidId: 
