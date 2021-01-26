@@ -10,17 +10,22 @@ public class Golfer : MonoBehaviour
     Ball ball;
     public GameObject player;
     public Hole hole;
+    public GameObject ballController;
 
     public int strikes;
     int points;
     public Text strikesText;
     public Text pointsText;
     public bool finished = false;
+    public bool addShowed = false;
 
     public AudioSource[] audioSources;
+    private AdsManager adsManager;
 
     void Start()
     {
+        this.gameObject.AddComponent<AdsManager>();
+        adsManager = this.gameObject.GetComponent<AdsManager>();
         player = GameObject.FindGameObjectWithTag("Player");
         strikes = 0;
         points = 0;
@@ -78,21 +83,27 @@ public class Golfer : MonoBehaviour
 
         if (hole.isIn)
         {
+            ballController.SetActive(false);
             //wyswietl wynik dolka i przenies do sceny wyboru poziomu
-            Time.timeScale = 0;
             if (!finished)
             {
                 player.GetComponent<Player>().totalPoints += points;
                 player.GetComponent<Player>().clearedLevels++;
                 hole.GetComponent<AudioSource>().clip = hole.winSound;
+                hole.GetComponent<AudioSource>().loop = false;
                 hole.GetComponent<AudioSource>().Play();
+                finished = true;
             }
-            finished = true;
-            SceneManager.LoadScene("Levels");
+            Time.timeScale = 0;
+            if (!addShowed) { 
+                adsManager.ShowIntestitialAd();
+                addShowed = true;
+            }
         }
         else
         {
             //punktacja w zaleznosci od typu dolka
+            ballController.SetActive(true);
             switch (hole.type)
             {
                 case 3:
@@ -322,5 +333,11 @@ public class Golfer : MonoBehaviour
     {
         pointsText.text = points.ToString();
         strikesText.text = strikes.ToString();
+    }
+
+    IEnumerator ChangeSceneAfterTime(float time)
+    {
+        yield return new WaitForSeconds(time);
+        SceneManager.LoadScene("Levels");
     }
 }

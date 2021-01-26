@@ -4244,6 +4244,11 @@ PrefabInstance:
       propertyPath: pointsText
       value: 
       objectReference: {fileID: 1642779699}
+    - target: {fileID: 4143983422884497352, guid: f618f68edafdf3345abb1a747a450d9c,
+        type: 3}
+      propertyPath: ballController
+      value: 
+      objectReference: {fileID: 771565318}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f618f68edafdf3345abb1a747a450d9c, type: 3}
 --- !u!1001 &8388778611781053673
