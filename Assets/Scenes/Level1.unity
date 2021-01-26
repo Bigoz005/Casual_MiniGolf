@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -552,75 +552,6 @@ RectTransform:
   m_AnchoredPosition: {x: 1.7000122, y: 0}
   m_SizeDelta: {x: -6.61, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1001 &195119549
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6093721747721057151, guid: f62329ca2885c684781e062bbbe9ff2e,
-        type: 3}
-      propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 6093721747721057145, guid: f62329ca2885c684781e062bbbe9ff2e,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.37213337
-      objectReference: {fileID: 0}
-    - target: {fileID: 6093721747721057145, guid: f62329ca2885c684781e062bbbe9ff2e,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.8060477
-      objectReference: {fileID: 0}
-    - target: {fileID: 6093721747721057145, guid: f62329ca2885c684781e062bbbe9ff2e,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.02326157
-      objectReference: {fileID: 0}
-    - target: {fileID: 6093721747721057145, guid: f62329ca2885c684781e062bbbe9ff2e,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6093721747721057145, guid: f62329ca2885c684781e062bbbe9ff2e,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6093721747721057145, guid: f62329ca2885c684781e062bbbe9ff2e,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6093721747721057145, guid: f62329ca2885c684781e062bbbe9ff2e,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6093721747721057145, guid: f62329ca2885c684781e062bbbe9ff2e,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 6093721747721057145, guid: f62329ca2885c684781e062bbbe9ff2e,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6093721747721057145, guid: f62329ca2885c684781e062bbbe9ff2e,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6093721747721057145, guid: f62329ca2885c684781e062bbbe9ff2e,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f62329ca2885c684781e062bbbe9ff2e, type: 3}
 --- !u!1 &212519649 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7864707786499410754, guid: 433fbab47954d2743901a4d72080fb89,
@@ -2912,7 +2843,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5067501, y: 0.34622222}
   m_AnchorMax: {x: 0.66800004, y: 0.5371852}
-  m_AnchoredPosition: {x: -68.69993, y: 0}
+  m_AnchoredPosition: {x: -1.5, y: -3.7}
   m_SizeDelta: {x: 214.59998, y: 141.79999}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1239039711
@@ -3472,7 +3403,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5067501, y: 0.43966666}
   m_AnchorMax: {x: 0.66800004, y: 0.63022226}
-  m_AnchoredPosition: {x: -68.7, y: -1.5201}
+  m_AnchoredPosition: {x: -1.5000458, y: 5.3}
   m_SizeDelta: {x: 214.59998, y: 142.79999}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1426113414
@@ -5405,11 +5336,6 @@ PrefabInstance:
       propertyPath: GUI
       value: 
       objectReference: {fileID: 1348090451}
-    - target: {fileID: 8124928667129303452, guid: 158161e3bc37553418305a245100f411,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 158161e3bc37553418305a245100f411, type: 3}
 --- !u!114 &3312482169190718642 stripped
@@ -5431,11 +5357,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4143983422884497355, guid: f618f68edafdf3345abb1a747a450d9c,
-        type: 3}
-      propertyPath: m_Name
-      value: Golfer
-      objectReference: {fileID: 0}
     - target: {fileID: 4143983422884497352, guid: f618f68edafdf3345abb1a747a450d9c,
         type: 3}
       propertyPath: hole
@@ -5461,6 +5382,21 @@ PrefabInstance:
       propertyPath: mainCanvas
       value: 
       objectReference: {fileID: 1348090451}
+    - target: {fileID: 4143983422884497352, guid: f618f68edafdf3345abb1a747a450d9c,
+        type: 3}
+      propertyPath: level_complete
+      value: 
+      objectReference: {fileID: 1771482267}
+    - target: {fileID: 4143983422884497352, guid: f618f68edafdf3345abb1a747a450d9c,
+        type: 3}
+      propertyPath: GUI
+      value: 
+      objectReference: {fileID: 1348090451}
+    - target: {fileID: 4143983422884497355, guid: f618f68edafdf3345abb1a747a450d9c,
+        type: 3}
+      propertyPath: m_Name
+      value: Golfer
+      objectReference: {fileID: 0}
     - target: {fileID: 4143983422884497356, guid: f618f68edafdf3345abb1a747a450d9c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5525,11 +5461,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8098881342194836145, guid: 2d46153267c4343449653e984a75830e,
-        type: 3}
-      propertyPath: m_Name
-      value: Golf Club
-      objectReference: {fileID: 0}
     - target: {fileID: 8098881342194836158, guid: 2d46153267c4343449653e984a75830e,
         type: 3}
       propertyPath: driver
@@ -5540,6 +5471,11 @@ PrefabInstance:
       propertyPath: putter
       value: 
       objectReference: {fileID: 402816270}
+    - target: {fileID: 8098881342194836145, guid: 2d46153267c4343449653e984a75830e,
+        type: 3}
+      propertyPath: m_Name
+      value: Golf Club
+      objectReference: {fileID: 0}
     - target: {fileID: 8098881342194836159, guid: 2d46153267c4343449653e984a75830e,
         type: 3}
       propertyPath: m_LocalPosition.x

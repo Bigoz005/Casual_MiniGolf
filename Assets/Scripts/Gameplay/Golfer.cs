@@ -19,6 +19,8 @@ public class Golfer : MonoBehaviour
     public Text pointsText;
     public bool finished = false;
     public bool addShowed = false;
+    public GameObject level_complete;
+    public GameObject GUI;
 
     public AudioSource[] audioSources;
     private AdsManager adsManager;
@@ -104,7 +106,8 @@ public class Golfer : MonoBehaviour
 
             if (adsManager.interstitialClosed)
             {
-                SceneManager.LoadScene("Menu");
+                level_complete.SetActive(true);
+                GUI.SetActive(false);
             }
         }
         else
