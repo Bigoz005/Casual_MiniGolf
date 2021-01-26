@@ -8,7 +8,7 @@ public class Golfer : MonoBehaviour
 {
     Club club;
     Ball ball;
-    public GameObject player;
+    public Player player;
     public Hole hole;
 
     public int strikes;
@@ -21,12 +21,12 @@ public class Golfer : MonoBehaviour
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-        strikes = 0;
-        points = 0;
+        player = GameObject.FindObjectOfType<Player>();
+        strikes = player.totalShots;
+        points = player.totalPoints;
         updateTextFields();
         audioSources = GameObject.FindObjectsOfType<AudioSource>();
-        player.GetComponent<Player>().timesPlay++;
+        player.timesPlay++;
         checkAudioSettings();
     }
 
@@ -36,7 +36,7 @@ public class Golfer : MonoBehaviour
         {
             if (sound.tag == "Sound_Source")
             {
-                if (player.GetComponent<Player>().IsSoundOn)
+                if (player.IsSoundOn)
                 {
                     sound.volume = 1.0f;
                 }
@@ -48,7 +48,7 @@ public class Golfer : MonoBehaviour
 
             if (sound.tag == "Ball_Sound_Source")
             {
-                if (player.GetComponent<Player>().IsSoundOn)
+                if (player.IsSoundOn)
                 {
                     sound.volume = 1.0f;
                 }
@@ -60,7 +60,12 @@ public class Golfer : MonoBehaviour
 
             if (sound.tag == "Music_Source")
             {
+<<<<<<< Updated upstream
                 if (player.GetComponent<Player>().IsMusicOn) { 
+=======
+                if (player.IsMusicOn)
+                {
+>>>>>>> Stashed changes
                     sound.volume = 1.0f;
                 }
                 else
@@ -79,9 +84,16 @@ public class Golfer : MonoBehaviour
         {
             //wyswietl wynik dolka i przenies do sceny wyboru poziomu
             Time.timeScale = 0;
+<<<<<<< Updated upstream
             if (!finished) { 
                 player.GetComponent<Player>().totalPoints += points;
                 player.GetComponent<Player>().clearedLevels++;
+=======
+            if (!finished)
+            {
+                player.totalPoints += points;
+                player.clearedLevels++;
+>>>>>>> Stashed changes
                 hole.GetComponent<AudioSource>().clip = hole.winSound;
                 hole.GetComponent<AudioSource>().Play();
             }

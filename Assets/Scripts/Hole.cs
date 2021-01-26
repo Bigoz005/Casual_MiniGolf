@@ -7,7 +7,12 @@ public class Hole : MonoBehaviour
     public bool isIn = false;
     public int type = 3; // czy dolek jest na 3 uderzenia lub wiecej
     public AudioClip winSound;
+<<<<<<< Updated upstream
     public GameObject levelComplete;
+=======
+    public GameObject completeLevel;
+    public GameObject GUI;
+>>>>>>> Stashed changes
 
     public Dictionary<string, int> PointsList = new Dictionary<string, int>();
     
@@ -31,7 +36,12 @@ public class Hole : MonoBehaviour
         if (other.gameObject.name == "Ball")
         {
             isIn = true;
+<<<<<<< Updated upstream
             levelComplete.SetActive(true);
+=======
+            completeLevel.SetActive(true);
+            GUI.SetActive(false);
+>>>>>>> Stashed changes
         }
     }
 }

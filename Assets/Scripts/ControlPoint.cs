@@ -52,14 +52,14 @@ public class ControlPoint : MonoBehaviour
                 ball.GetComponentInParent<Ball>().source.pitch = 1;
                 ball.GetComponentInParent<Ball>().source.Play();
             }
-            if (golfer.player.GetComponent<Player>().IsVibrationOn)
+            if (golfer.player.IsVibrationOn)
             {
                 Handheld.Vibrate();
             }
             ball.velocity = transform.forward * shootPower;
             line.gameObject.SetActive(false);
             golfer.strikes++;
-            golfer.player.GetComponent<Player>().totalShots++;
+            golfer.player.totalShots++;
         }
 
     }
@@ -94,7 +94,7 @@ public class ControlPoint : MonoBehaviour
             ball.velocity = transform.forward * shootPower;
             line.gameObject.SetActive(false);
             golfer.strikes++;
-            golfer.player.GetComponent<Player>().totalShots++;
+            golfer.player.totalShots++;
         }
 
     }
