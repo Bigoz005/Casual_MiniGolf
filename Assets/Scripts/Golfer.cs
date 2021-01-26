@@ -86,7 +86,6 @@ public class Golfer : MonoBehaviour
                 hole.GetComponent<AudioSource>().Play();
             }
             finished = true;
-            SceneManager.LoadScene("Levels");
         }
         else
         {

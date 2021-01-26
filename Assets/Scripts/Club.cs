@@ -8,12 +8,12 @@ public class Club : MonoBehaviour
     string[] namesArray = { "Putter", "Drive" };
     public string clubName = "";
 
-    public Text nameText;
+    public GameObject driver;
+    public GameObject putter;
 
     void Start()
     {
         clubName = namesArray[0];
-        nameText.text = clubName;
     }
 
     private void Update()
@@ -55,12 +55,15 @@ public class Club : MonoBehaviour
         if (clubName == namesArray[0])
         {
             clubName = namesArray[1];
-            nameText.text = clubName;
+            
+            driver.SetActive(true);
+            putter.SetActive(false);
         }
         else
         {
             clubName = namesArray[0];
-            nameText.text = clubName;
+            driver.SetActive(false);
+            putter.SetActive(true);
         }
         GetComponentInParent<AudioSource>().Play();
     }
