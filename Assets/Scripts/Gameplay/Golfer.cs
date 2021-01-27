@@ -30,8 +30,8 @@ public class Golfer : MonoBehaviour
         this.gameObject.AddComponent<AdsManager>();
         adsManager = this.gameObject.GetComponent<AdsManager>();
         player = GameObject.FindObjectOfType<Player>();
-        strikes = player.totalShots;
-        points = player.totalPoints;
+        strikes = 0;
+        points = 0;
         updateTextFields();
         audioSources = GameObject.FindObjectsOfType<AudioSource>();
         player.timesPlay++;
@@ -113,8 +113,8 @@ public class Golfer : MonoBehaviour
         else
         {
             //punktacja w zaleznosci od typu dolka
-            ballController.SetActive(true);
-            mainCanvas.SetActive(true);
+            //ballController.SetActive(true);
+            //mainCanvas.SetActive(true);
             switch (hole.type)
             {
                 case 3:
