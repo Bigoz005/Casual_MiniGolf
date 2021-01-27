@@ -3974,6 +3974,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8098881342194836145, guid: 2d46153267c4343449653e984a75830e,
+        type: 3}
+      propertyPath: m_Name
+      value: Golf Club
+      objectReference: {fileID: 0}
     - target: {fileID: 8098881342194836158, guid: 2d46153267c4343449653e984a75830e,
         type: 3}
       propertyPath: driver
@@ -3984,11 +3989,6 @@ PrefabInstance:
       propertyPath: putter
       value: 
       objectReference: {fileID: 1630901980}
-    - target: {fileID: 8098881342194836145, guid: 2d46153267c4343449653e984a75830e,
-        type: 3}
-      propertyPath: m_Name
-      value: Golf Club
-      objectReference: {fileID: 0}
     - target: {fileID: 8098881342194836159, guid: 2d46153267c4343449653e984a75830e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7545,8 +7545,8 @@ Light:
   serializedVersion: 9
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
-  m_Range: 10
+  m_Intensity: 1.5
+  m_Range: 100
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -7602,7 +7602,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1716662994}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.35, y: 5.748, z: -2.14}
+  m_LocalPosition: {x: 1.35, y: 4.694, z: -2.14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -8100,6 +8100,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4143983422884497355, guid: f618f68edafdf3345abb1a747a450d9c,
+        type: 3}
+      propertyPath: m_Name
+      value: Golfer
+      objectReference: {fileID: 0}
     - target: {fileID: 4143983422884497352, guid: f618f68edafdf3345abb1a747a450d9c,
         type: 3}
       propertyPath: hole
@@ -8135,11 +8140,6 @@ PrefabInstance:
       propertyPath: GUI
       value: 
       objectReference: {fileID: 2057773584}
-    - target: {fileID: 4143983422884497355, guid: f618f68edafdf3345abb1a747a450d9c,
-        type: 3}
-      propertyPath: m_Name
-      value: Golfer
-      objectReference: {fileID: 0}
     - target: {fileID: 4143983422884497356, guid: f618f68edafdf3345abb1a747a450d9c,
         type: 3}
       propertyPath: m_LocalPosition.x
