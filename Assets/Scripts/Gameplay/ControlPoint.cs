@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Android;
 using UnityEngine;
 
 public class ControlPoint : MonoBehaviour
@@ -54,7 +55,9 @@ public class ControlPoint : MonoBehaviour
             }
             if (golfer.player.IsVibrationOn)
             {
+                #if UNITY_ANDROID
                 Handheld.Vibrate();
+                #endif
             }
             ball.velocity = transform.forward * shootPower;
             line.gameObject.SetActive(false);
